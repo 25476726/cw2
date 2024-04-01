@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>admin create</title>
+    <title>Questionnaire</title>
 </head>
 <body>
-<h1>admin create</h1>
+<h1>Questionnaire</h1>
 
 {!! Form::open(array('action' => 'AdminController@store', 'id' => 'answerquestionnaire')) !!}
         {{ csrf_field() }}
@@ -16,7 +16,7 @@
 
     <div class="row large-12 columns">
         {!! Form::label('q2', 'Question 2:') !!}
-        {!! Form::textarea('q2', null, ['class' => 'large-8 columns']) !!}
+        {!! Form::text('q2', null, ['class' => 'large-8 columns']) !!}
     </div>
 
     <div class="row large-12 columns">
@@ -25,13 +25,18 @@
     </div>
 
     <div class="row large-12 columns">
-    {!! Form::label('q4', 'Question 4:') !!}
-    {!! Form::select('category[]', $cats, null,['class' => 'large-8 columns', 'multiple']) !!}
+        {!! Form::label('q4', 'Question 4:') !!}
+        {!! Form::text('q4', null, ['class' => 'large-8 columns']) !!}
+    </div>
+
+    <div class="row large-12 columns">
+        {!! Form::label('q5', 'Question 5:') !!}
+        {!! Form::text('q5', null, ['class' => 'large-8 columns']) !!}
     </div>
 
 
     <div class="row large-4 columns">
-        {!! Form::submit('Answers', ['class' => 'button']) !!}
+        {!! Form::submit('Submit', ['class' => 'button']) !!}
     </div>
 {!! Form::close() !!}
 
