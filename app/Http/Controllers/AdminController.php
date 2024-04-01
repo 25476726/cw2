@@ -64,6 +64,9 @@ class AdminController extends Controller
     public function edit($id)
     {
         return view('/admin/edit');
+    }#
+    public function view() {
+        return view('/admin/view');
     }
 
     /**
