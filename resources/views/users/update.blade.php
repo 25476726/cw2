@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>users update</title>
+    <link rel="stylesheet" href="/css/foundation.css" />
 </head>
 <body>
     <h1>users update</h1>

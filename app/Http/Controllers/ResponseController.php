@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 
-class UserController extends Controller
+class ResponseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-   
-        $users = User::all();
-   
-        return view('users/index', ['users' => $users]);
-        // return view('/home');
-   
-   
+        //
     }
 
     /**
@@ -30,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('/users/create');
+        //
     }
 
     /**
@@ -63,16 +56,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        // get the user
-        $user = User::where('id',$id)->first();
-    
-        // if user does not exist return to list
-        if(!$user)
-        {
-            return redirect('/users');
-            // you could add on here the flash messaging of article does not exist.
-        }
-        return view('/users/edit')->with('user', $user);
+        //
     }
 
     /**
@@ -84,9 +68,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
-
-        return redirect('/users');
+        //
     }
 
     /**

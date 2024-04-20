@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Option extends Model
 {
     protected $fillable = [
-        'question_name', 'question_description',
+        'option_name',
     ];
 }
+

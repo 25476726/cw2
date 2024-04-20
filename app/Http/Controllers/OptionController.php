@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Option;
+use App\Category;
 
-class UserController extends Controller
+class OptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,9 @@ class UserController extends Controller
     public function index()
     {
    
-        $users = User::all();
+        $options = Option::all();
    
-        return view('users/index', ['users' => $users]);
+        return view('option/index', ['options' => $options]);
         // return view('/home');
    
    
@@ -30,7 +31,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('/users/create');
+        $cats = Category::pluck('title', 'id');
+
+        return view('/option/create', compact('cats'));
     }
 
     /**
@@ -63,16 +66,18 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        // get the user
-        $user = User::where('id',$id)->first();
-    
-        // if user does not exist return to list
-        if(!$user)
         {
-            return redirect('/users');
-            // you could add on here the flash messaging of article does not exist.
+            // get the user
+            $option = Option::where('id',$id)->first();
+        
+            // if user does not exist return to list
+            if(!$option)
+            {
+                return redirect('/option');
+                // you could add on here the flash messaging of article does not exist.
+            }
+            return view('/option/edit')->with('option', $option);
         }
-        return view('/users/edit')->with('user', $user);
     }
 
     /**
@@ -84,9 +89,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
+        $option = Option::findOrFail($id);
 
-        return redirect('/users');
+        return redirect('/option');
     }
 
     /**

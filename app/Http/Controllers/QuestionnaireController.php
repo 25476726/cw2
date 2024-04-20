@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Questionnaire;
+use App\Category;
 
-class UserController extends Controller
+class QuestionnaireController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,9 @@ class UserController extends Controller
     public function index()
     {
    
-        $users = User::all();
+        $questionnaires = Questionnaire::all();
    
-        return view('users/index', ['users' => $users]);
+        return view('questionnaire/index', ['questionnaires' => $questionnaires]);
         // return view('/home');
    
    
@@ -30,7 +31,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('/users/create');
+        $cats = Category::pluck('title', 'id');
+
+        return view('/questionnaire/create', compact('cats'));
     }
 
     /**
@@ -63,16 +66,18 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        // get the user
-        $user = User::where('id',$id)->first();
-    
-        // if user does not exist return to list
-        if(!$user)
         {
-            return redirect('/users');
-            // you could add on here the flash messaging of article does not exist.
+            // get the user
+            $questionnaire = Questionnaire::where('id',$id)->first();
+        
+            // if user does not exist return to list
+            if(!$questionnaire)
+            {
+                return redirect('/questionnaire');
+                // you could add on here the flash messaging of article does not exist.
+            }
+            return view('/questionnaire/edit')->with('questionnaire', $questionnaire);
         }
-        return view('/users/edit')->with('user', $user);
     }
 
     /**
@@ -84,9 +89,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
+        $questionnaire = Questionnaire::findOrFail($id);
 
-        return redirect('/users');
+        return redirect('/questionnaire');
     }
 
     /**

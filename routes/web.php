@@ -14,14 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['middleware' => ['web']], function () {
-    //
-
-    Route::auth();
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/admin', 'AdminController' );
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/users', 'UserController' );
-});
+
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('/questionnaire', 'QuestionnaireController' );
+
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('/question', 'QuestionController' );
+
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('/option', 'OptionController' );

@@ -10,10 +10,6 @@ class AdminController extends Controller
          /*
    * Secure the set of pages to the admin.
    */
-  public function __construct()
-  {
-      $this->middleware('auth');
-  }
     /**
      * Display a listing of the resource.
      *
