@@ -10,10 +10,10 @@
 
 {!! Form::open(array('action' => 'QuestionnaireController@store', 'id' => 'createquestionnaire')) !!}
         {{ csrf_field() }}
-    <div class="row large-12 columns">
+<!--     <div class="row large-12 columns">
     {!! Form::label('questionnaire_id', 'ID:') !!}
     {!! Form::text('questionnaire_id', null, ['class' => 'large-8 columns']) !!}
-    </div>
+    </div> -->
     <div class="row large-12 columns">
         {!! Form::label('questionnaire_name', 'Title:') !!}
         {!! Form::text('questionnaire_name', null, ['class' => 'large-8 columns']) !!}

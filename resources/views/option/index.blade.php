@@ -18,7 +18,7 @@
              </tr>
              @foreach ($options as $option)
                  <tr>
-                     <td> {{ $option->id }}</td>
+                     <td> {{ $option->option_id }}</td>
                      <td><a href="/option/{{ $option->option_id }}/edit" name="{{ $option->option_name }}">{{ $option->option_name }}</a></td>
                  </tr>
              @endforeach

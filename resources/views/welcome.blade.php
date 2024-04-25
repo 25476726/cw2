@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    ABC Ltd
+                    Survey Site
                 </div>
                 <div>
                     Welcome to my belter survey site
@@ -93,7 +93,7 @@
                     <a href="http://127.0.0.1:8000/question">Questions</a>
                     <a href="http://127.0.0.1:8000/option">Options</a>
                     <a href="http://127.0.0.1:8000/admin/create">testquest</a>
-                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="http://127.0.0.1:8000/questionnaire/show">examplequest</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>

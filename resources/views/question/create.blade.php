@@ -11,10 +11,6 @@
 {!! Form::open(array('action' => 'QuestionController@store', 'id' => 'createquestion')) !!}
         {{ csrf_field() }}
     <div class="row large-12 columns">
-    {!! Form::label('question_id', 'ID:') !!}
-    {!! Form::text('question_id', null, ['class' => 'large-8 columns']) !!}
-    </div>
-    <div class="row large-12 columns">
         {!! Form::label('question_name', 'Title:') !!}
         {!! Form::text('question_name', null, ['class' => 'large-8 columns']) !!}
     </div>

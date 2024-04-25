@@ -41,7 +41,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create($request->all());
+        $user->users()->attach($request->input('user'));
+
+        return redirect('/users');
     }
 
     /**
@@ -52,7 +55,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::all();
+   
+        return view('user/show', ['users' => $users]);
     }
 
     /**

@@ -1349,7 +1349,7 @@ form .row textarea.columns {
 
 /* Label Styles */
 label {
-  color: #4d4d4d;
+  color: #fefefe;
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
@@ -3702,11 +3702,11 @@ td {
 
 /* Default Link Styles */
 a {
-  color: #008CBA;
+  color: #000;
   line-height: inherit;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #0078a0; }
+    color: #0f4; }
   a img {
     border: none; }
 
@@ -3728,7 +3728,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  color: #222222;
+  color: #fefefe;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;

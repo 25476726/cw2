@@ -31,9 +31,8 @@ class OptionController extends Controller
      */
     public function create()
     {
-        $cats = Category::pluck('title', 'id');
 
-        return view('/option/create', compact('cats'));
+        return view('/option/create');
     }
 
     /**
@@ -44,7 +43,10 @@ class OptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $option = Option::create($request->all());
+        $option->options()->attach($request->input('option'));
+
+        return redirect('/option');
     }
 
     /**
@@ -55,7 +57,9 @@ class OptionController extends Controller
      */
     public function show($id)
     {
-        //
+        $options = Option::all();
+   
+        return view('option/show', ['options' => $options]);
     }
 
     /**

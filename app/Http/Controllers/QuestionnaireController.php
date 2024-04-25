@@ -31,9 +31,9 @@ class QuestionnaireController extends Controller
      */
     public function create()
     {
-        $cats = Category::pluck('title', 'id');
+       
 
-        return view('/questionnaire/create', compact('cats'));
+        return view('/questionnaire/create');
     }
 
     /**
@@ -44,7 +44,10 @@ class QuestionnaireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $questionnaire = Questionnaire::create($request->all());
+        $questionnaire->questionnaires()->attach($request->input('questionnaire'));
+
+        return redirect('/questionnaire');
     }
 
     /**
@@ -55,7 +58,9 @@ class QuestionnaireController extends Controller
      */
     public function show($id)
     {
-        //
+        $questionnaire = Questionnaire::where('questionnaire_id', $id)->first();
+   
+        return view('questionnaire/show', ['questionnaire' => $questionnaire]);
     }
 
     /**
@@ -68,7 +73,7 @@ class QuestionnaireController extends Controller
     {
         {
             // get the user
-            $questionnaire = Questionnaire::where('id',$id)->first();
+            $questionnaire = Questionnaire::where('questionnaire_id',$id)->first();
         
             // if user does not exist return to list
             if(!$questionnaire)
@@ -89,9 +94,18 @@ class QuestionnaireController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $questionnaire = Questionnaire::findOrFail($id);
-
-        return redirect('/questionnaire');
+        {
+            // get the user
+            $questionnaire = Questionnaire::where('questionnaire_id',$id)->first();
+        
+            // if user does not exist return to list
+            if(!$questionnaire)
+            {
+                return redirect('/questionnaire');
+                // you could add on here the flash messaging of article does not exist.
+            }
+            return view('/questionnaire/edit')->with('questionnaire', $questionnaire);
+        }
     }
 
     /**

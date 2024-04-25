@@ -8,27 +8,23 @@
 <body>
 <h1>Add User</h1>
 
-<!-- {!! Form::open(array('action' => 'QuestionnaireController@store', 'id' => 'createquestionnaire')) !!}
+{!! Form::open(array('action' => 'UserController@store', 'id' => 'createuser')) !!}
         {{ csrf_field() }}
     <div class="row large-12 columns">
-    {!! Form::label('questionnaire_id', 'ID:') !!}
-    {!! Form::text('questionnaire_id', null, ['class' => 'large-8 columns']) !!}
-    </div>
-    <div class="row large-12 columns">
-        {!! Form::label('questionnaire_name', 'Title:') !!}
-        {!! Form::text('questionnaire_name', null, ['class' => 'large-8 columns']) !!}
+        {!! Form::label('user_name', 'Name:') !!}
+        {!! Form::text('user_name', null, ['class' => 'large-8 columns']) !!}
     </div>
 
     <div class="row large-12 columns">
-        {!! Form::label('questionnaire_description', 'Detail:') !!}
-        {!! Form::textarea('questionnaire_description', null, ['class' => 'large-8 columns']) !!}
+        {!! Form::label('email', 'Email:') !!}
+        {!! Form::textarea('email', null, ['class' => 'large-8 columns']) !!}
     </div>
 
 
     <div class="row large-4 columns">
-        {!! Form::submit('Add Questionnaire', ['class' => 'button']) !!}
+        {!! Form::submit('Add User', ['class' => 'button']) !!}
     </div>
-{!! Form::close() !!} -->
+{!! Form::close() !!}
 
 </body>
 </html>

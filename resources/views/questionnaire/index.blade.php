@@ -1,5 +1,5 @@
-<!doctype html>
- <html lang="">
+<!DOCTYPE html>
+ <html lang="en">
  <head>
      <meta charset="UTF-8">
      <title>All Questionnaires</title>
@@ -16,12 +16,14 @@
                  <th>Questionnaire ID</th>
                  <th>Questionnaire Name</th>
                  <th>Questionnaire Description</th>
+                 <th>Take Questionnaire</th>
              </tr>
              @foreach ($questionnaires as $questionnaire)
                  <tr>
                      <td> {{ $questionnaire->questionnaire_id }}</td>
                      <td><a href="/questionnaire/{{ $questionnaire->questionnaire_id }}/edit" name="{{ $questionnaire->questionnaire_name }}">{{ $questionnaire->questionnaire_name }}</a></td>
                      <td> {{ $questionnaire->questionnaire_description }}</td>
+                     <td><button><a href="http://127.0.0.1:8000/questionnaire/{{ $questionnaire->questionnaire_id }}">Click here to take the {{ $questionnaire->questionnaire_name }} Questionnaire</a></button></td>
                  </tr>
              @endforeach
          </table>

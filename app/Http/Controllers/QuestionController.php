@@ -31,9 +31,8 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        $cats = Category::pluck('title', 'id');
 
-        return view('/question/create', compact('cats'));
+        return view('/question/create');
     }
 
     /**
@@ -44,7 +43,10 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $question = Question::create($request->all());
+        $question->questions()->attach($request->input('question'));
+
+        return redirect('/question');
     }
 
     /**
@@ -55,7 +57,9 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        //
+        $questions = Question::all();
+   
+        return view('question/show', ['questions' => $questions]);
     }
 
     /**
