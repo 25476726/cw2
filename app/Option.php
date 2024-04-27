@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Option extends Model
 {
     protected $fillable = [
-        'option_name',
+        'option_name', 'question_assigned_to',
     ];
     public function options()
     {

@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="/css/foundation.css" />
 </head>
 <body>
+<header>
+    <nav>
+            <button><a href="http://127.0.0.1:8000/">Home</a></button>
+            <button><a href="http://127.0.0.1:8000/users">Back to all Users</a></button>
+    </nav>
+</header>
 <h1>Edit - {{ $user->name }}</h1>
 
 

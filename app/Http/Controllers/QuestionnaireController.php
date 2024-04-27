@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Questionnaire;
+use App\Question;
+use App\Option;
 use App\Category;
 
 class QuestionnaireController extends Controller
@@ -31,7 +33,6 @@ class QuestionnaireController extends Controller
      */
     public function create()
     {
-       
 
         return view('/questionnaire/create');
     }
@@ -58,9 +59,16 @@ class QuestionnaireController extends Controller
      */
     public function show($id)
     {
+
         $questionnaire = Questionnaire::where('questionnaire_id', $id)->first();
+
+        $questionnairequestions = Question::where('questionnaire_assigned_to', $id)->first();
+
+        $question_id = Question::pluck('question_id');
+
+        $questionoptions = Option::where('question_assigned_to', $question_id)->first();
    
-        return view('questionnaire/show', ['questionnaire' => $questionnaire]);
+        return view('questionnaire/show', ['questionnaire' => $questionnaire], ['questionnairequestions' => $questionnairequestions], ['questionoptions' => $questionoptions]);
     }
 
     /**

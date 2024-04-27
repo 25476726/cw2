@@ -8,5 +8,22 @@
 </head>
 <body>
     <h1>there is no place like 127.0.0.1</h1>
+    <div class="links">
+                    <a href="http://127.0.0.1:8000/users">Users</a>
+                    <a href="http://127.0.0.1:8000/questionnaire">Questionnaires</a>
+                    <a href="http://127.0.0.1:8000/question">Questions</a>
+                    <a href="http://127.0.0.1:8000/option">Options</a>
+                    <a href="http://127.0.0.1:8000/admin/create">testquest</a>
+                    <a href="http://127.0.0.1:8000/questionnaire/show">examplequest</a>
+                    <a href="https://vapor.laravel.com">Vapor</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+        <nav>
+            <button class="buttonactive"><a href="http://127.0.0.1:8000/">Home</a></button>
+            <button><a href="http://127.0.0.1:8000/questionnaire">Questionnaires</a></button>
+            <button><a href="http://127.0.0.1:8000/question">Questions</a></button>
+            <button><a href="http://127.0.0.1:8000/option">Options</a></button>
+            <button><a href="http://127.0.0.1:8000/users">Users</a></button>
+        </nav>
 </body>
 </html>

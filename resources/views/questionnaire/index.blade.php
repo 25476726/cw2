@@ -7,7 +7,16 @@
  </head>
  <body>
 
- 
+    <nav>
+            <button><a href="http://127.0.0.1:8000/">Home</a></button>
+            <button class="buttonactive"><a href="http://127.0.0.1:8000/questionnaire">Questionnaires</a></button>
+            <button><a href="http://127.0.0.1:8000/question">Questions</a></button>
+            <button><a href="http://127.0.0.1:8000/option">Options</a></button>
+            <button><a href="http://127.0.0.1:8000/users">Users</a></button>
+    </nav>
+    <header>
+        <h1>All Questionnaires</h1>
+    </header>
  <section>
      @if (isset ($questionnaires))
 
@@ -17,13 +26,15 @@
                  <th>Questionnaire Name</th>
                  <th>Questionnaire Description</th>
                  <th>Take Questionnaire</th>
+                 <th>Edit Questionnaire</th>
              </tr>
              @foreach ($questionnaires as $questionnaire)
                  <tr>
                      <td> {{ $questionnaire->questionnaire_id }}</td>
-                     <td><a href="/questionnaire/{{ $questionnaire->questionnaire_id }}/edit" name="{{ $questionnaire->questionnaire_name }}">{{ $questionnaire->questionnaire_name }}</a></td>
+                     <td>{{ $questionnaire->questionnaire_name }}</td>
                      <td> {{ $questionnaire->questionnaire_description }}</td>
                      <td><button><a href="http://127.0.0.1:8000/questionnaire/{{ $questionnaire->questionnaire_id }}">Click here to take the {{ $questionnaire->questionnaire_name }} Questionnaire</a></button></td>
+                     <td><button><a href="/questionnaire/{{ $questionnaire->questionnaire_id }}/edit">Click here to edit the {{ $questionnaire->questionnaire_name }} Questionnaire</a></button></td>
                  </tr>
              @endforeach
          </table>
@@ -33,8 +44,8 @@
  </section>
 
  {{ Form::open(array('action' => 'QuestionnaireController@create', 'method' => 'get')) }}
-    <div class="row">
-        {!! Form::submit('Add Questionnaire', ['class' => 'button']) !!}
+    <div class="row large-12 columns">
+        {!! Form::submit('Create a new Questionnaire', ['class' => 'button']) !!}
     </div>
 {{ Form::close() }}
 

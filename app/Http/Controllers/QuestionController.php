@@ -57,9 +57,9 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $questions = Question::all();
+        $question = Question::where('question_id', $id)->first();
    
-        return view('question/show', ['questions' => $questions]);
+        return view('question/show', ['question' => $question]);
     }
 
     /**
@@ -72,7 +72,7 @@ class QuestionController extends Controller
     {
         {
             // get the user
-            $question = Question::where('id',$id)->first();
+            $question = Question::where('question_id',$id)->first();
         
             // if user does not exist return to list
             if(!$question)
@@ -93,9 +93,18 @@ class QuestionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $question = Question::findOrFail($id);
-
-        return redirect('/question');
+        {
+            // get the user
+            $question = Question::where('question_id',$id)->first();
+        
+            // if user does not exist return to list
+            if(!$question)
+            {
+                return redirect('/question');
+                // you could add on here the flash messaging of article does not exist.
+            }
+            return view('/question/edit')->with('question', $question);
+        }
     }
 
     /**

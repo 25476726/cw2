@@ -57,7 +57,7 @@ class OptionController extends Controller
      */
     public function show($id)
     {
-        $options = Option::all();
+        $option = Option::where('option_id', $id)->first();
    
         return view('option/show', ['options' => $options]);
     }
@@ -72,7 +72,7 @@ class OptionController extends Controller
     {
         {
             // get the user
-            $option = Option::where('id',$id)->first();
+            $option = Option::where('option_id',$id)->first();
         
             // if user does not exist return to list
             if(!$option)
@@ -93,9 +93,18 @@ class OptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $option = Option::findOrFail($id);
-
-        return redirect('/option');
+        {
+            // get the user
+            $option = Option::where('option_id',$id)->first();
+        
+            // if user does not exist return to list
+            if(!$option)
+            {
+                return redirect('/option');
+                // you could add on here the flash messaging of article does not exist.
+            }
+            return view('/option/edit')->with('option', $option);
+        }
     }
 
     /**

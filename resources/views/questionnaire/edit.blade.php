@@ -2,28 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit {{ $questionnaire->questionnaire_id }}</title>
+    <title>Edit Questionnaire {{ $questionnaire->questionnaire_id }}</title>
     <link rel="stylesheet" href="/css/foundation.css" />
 </head>
 <body>
-<h1>Edit - {{ $questionnaire->questionnaire_id }}</h1>
+<header>
+    <nav>
+            <button><a href="http://127.0.0.1:8000/">Home</a></button>
+            <button><a href="http://127.0.0.1:8000/questionnaire">Back to all Questionnaires</a></button>
+    </nav>
+</header>
+<h1>Edit Questionnaire {{ $questionnaire->questionnaire_id }}</h1>
 
 
         <!-- form goes here -->
 {!! Form::model($questionnaire, ['action' => 'QuestionnaireController@update', 'method' => 'PATCH', 'url' => '/questionnaire/' , $questionnaire->questionnaire_id]) !!}
 
 <div>
-    {!! Form::label('questionnaire_name', 'Name:') !!}
+    {!! Form::label('questionnaire_name', 'Questionnaire Name:') !!}
     {!! Form::text('questionnaire_name', null) !!}
 </div>
 
 <div>
-    {!! Form::label('questionnaire_description', 'Description:') !!}
+    {!! Form::label('questionnaire_description', 'Questionnaire Description:') !!}
     {!! Form::textarea('questionnaire_description', null) !!}
 </div>
 
 <div>
-    {!! Form::submit('Update Questionnaire') !!}
+{!! Form::checkbox('livecomp', 'Live Completion:') !!}
+{!! Form::label('livecomp', 'Select for Live Completion mode, leave unselected for Development mode.') !!}
+</div>
+
+<div>
+{!! Form::submit('Update Questionnaire', ['class' => 'button']) !!}
 </div>
 
 

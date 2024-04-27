@@ -1441,10 +1441,10 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 0;
-  background-color: #FFFFFF;
+  background-color: #0a0a0a;
   border-style: solid;
   border-width: 1px;
-  border-color: #cccccc;
+  border-color: #0a0a0a;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.75);
   display: block;
@@ -5307,39 +5307,39 @@ ul.off-canvas-list {
       left: 0 !important; }
 
 table {
-  background: #FFFFFF;
-  border: solid 1px #DDDDDD;
+  background: #000000;
+  border: solid 1px #0a0a0a;
   margin-bottom: 1.25rem;
   table-layout: auto; }
   table caption {
     background: transparent;
-    color: #222222;
+    color: #fefefe;
     font-size: 1rem;
     font-weight: bold; }
   table thead {
-    background: #F5F5F5; }
+    background: #0a0a0a; }
     table thead tr th,
     table thead tr td {
-      color: #222222;
+      color: #fefefe;
       font-size: 0.875rem;
       font-weight: bold;
       padding: 0.5rem 0.625rem 0.625rem; }
   table tfoot {
-    background: #F5F5F5; }
+    background: #0a0a0a; }
     table tfoot tr th,
     table tfoot tr td {
-      color: #222222;
+      color: #fefefe;
       font-size: 0.875rem;
       font-weight: bold;
       padding: 0.5rem 0.625rem 0.625rem; }
   table tr th,
   table tr td {
-    color: #222222;
+    color: #fefefe;
     font-size: 0.875rem;
     padding: 0.5625rem 0.625rem;
     text-align: left; }
   table tr.even, table tr.alt, table tr:nth-of-type(even) {
-    background: #F9F9F9; }
+    background: #0a0a0a; }
   table thead tr th,
   table tfoot tr th,
   table tfoot tr td,
@@ -6322,3 +6322,12 @@ th.hide-for-touch {
 @media not print {
   .show-for-print {
     display: none !important; } }
+
+.buttonactive {
+  background-color: #0fa;
+}
+.greyline { /*adds a grey divider line to help distinguish between sections*/
+  height: 2px;
+  color: #0a0a0a;
+  background-color: #1a1a1a;
+}
