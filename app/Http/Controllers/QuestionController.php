@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Question;
+use App\Question; //make question model available to the contorller.
 use App\Category;
 
 class QuestionController extends Controller
@@ -19,7 +19,7 @@ class QuestionController extends Controller
         $questions = Question::all();
    
         return view('question/index', ['questions' => $questions]);
-        // return view('/home');
+        // return view for questions index page
    
    
     }
@@ -71,14 +71,13 @@ class QuestionController extends Controller
     public function edit($id)
     {
         {
-            // get the user
+            // get the question
             $question = Question::where('question_id',$id)->first();
         
-            // if user does not exist return to list
+            // if question does not exist return to list
             if(!$question)
             {
                 return redirect('/question');
-                // you could add on here the flash messaging of article does not exist.
             }
             return view('/question/edit')->with('question', $question);
         }
@@ -94,14 +93,13 @@ class QuestionController extends Controller
     public function update(Request $request, $id)
     {
         {
-            // get the user
+            // get the question
             $question = Question::where('question_id',$id)->first();
         
-            // if user does not exist return to list
+            // if question does not exist return to list
             if(!$question)
             {
                 return redirect('/question');
-                // you could add on here the flash messaging of article does not exist.
             }
             return view('/question/edit')->with('question', $question);
         }

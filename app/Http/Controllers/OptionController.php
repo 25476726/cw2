@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Option;
+use App\Option; //makes option model available to the controller.
 use App\Category;
 
 class OptionController extends Controller
@@ -19,7 +19,7 @@ class OptionController extends Controller
         $options = Option::all();
    
         return view('option/index', ['options' => $options]);
-        // return view('/home');
+        // return view for options index page.
    
    
     }
@@ -33,6 +33,7 @@ class OptionController extends Controller
     {
 
         return view('/option/create');
+        //returns view for create new option page.
     }
 
     /**
@@ -46,7 +47,7 @@ class OptionController extends Controller
         $option = Option::create($request->all());
         $option->options()->attach($request->input('option'));
 
-        return redirect('/option');
+        return redirect('/option'); //stores new option in database and then redurects back to options index page.
     }
 
     /**
@@ -57,7 +58,7 @@ class OptionController extends Controller
      */
     public function show($id)
     {
-        $option = Option::where('option_id', $id)->first();
+        $option = Option::where('option_id', $id)->first(); //shows selected option (not used in this site)
    
         return view('option/show', ['options' => $options]);
     }
@@ -71,14 +72,13 @@ class OptionController extends Controller
     public function edit($id)
     {
         {
-            // get the user
+            // get the option
             $option = Option::where('option_id',$id)->first();
         
-            // if user does not exist return to list
+            // if option does not exist return to list
             if(!$option)
             {
                 return redirect('/option');
-                // you could add on here the flash messaging of article does not exist.
             }
             return view('/option/edit')->with('option', $option);
         }
@@ -94,14 +94,13 @@ class OptionController extends Controller
     public function update(Request $request, $id)
     {
         {
-            // get the user
+            // get the option
             $option = Option::where('option_id',$id)->first();
         
-            // if user does not exist return to list
+            // if option does not exist return to list
             if(!$option)
             {
                 return redirect('/option');
-                // you could add on here the flash messaging of article does not exist.
             }
             return view('/option/edit')->with('option', $option);
         }

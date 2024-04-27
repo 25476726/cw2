@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Questionnaire;
+use App\Questionnaire; /* Makes the Questionnaire, Question, and Option models available to the contorller. */
 use App\Question;
 use App\Option;
 use App\Category;
@@ -21,7 +21,7 @@ class QuestionnaireController extends Controller
         $questionnaires = Questionnaire::all();
    
         return view('questionnaire/index', ['questionnaires' => $questionnaires]);
-        // return view('/home');
+        // return view for questionnaire index page that shows all questionnaires
    
    
     }
@@ -60,13 +60,13 @@ class QuestionnaireController extends Controller
     public function show($id)
     {
 
-        $questionnaire = Questionnaire::where('questionnaire_id', $id)->first();
+        $questionnaire = Questionnaire::where('questionnaire_id', $id)->first(); /* Selects the questionnaire by its id number*/
 
-        $questionnairequestions = Question::where('questionnaire_assigned_to', $id)->first();
+        $questionnairequestions = Question::where('questionnaire_assigned_to', $id)->first(); /* Displays just the questions that are assigned to this questionnaire */
 
-        $question_id = Question::pluck('question_id');
+        $question_id = Question::pluck('question_id'); /* gets the question id */
 
-        $questionoptions = Option::where('question_assigned_to', $question_id)->first();
+        $questionoptions = Option::where('question_assigned_to', $question_id)->first(); /* Displays just the options assigned to this question */
    
         return view('questionnaire/show', ['questionnaire' => $questionnaire], ['questionnairequestions' => $questionnairequestions], ['questionoptions' => $questionoptions]);
     }
@@ -80,14 +80,13 @@ class QuestionnaireController extends Controller
     public function edit($id)
     {
         {
-            // get the user
+            // get the questionnaire which was selected
             $questionnaire = Questionnaire::where('questionnaire_id',$id)->first();
         
-            // if user does not exist return to list
+            // if questionnaire selected does not exist return to list
             if(!$questionnaire)
             {
                 return redirect('/questionnaire');
-                // you could add on here the flash messaging of article does not exist.
             }
             return view('/questionnaire/edit')->with('questionnaire', $questionnaire);
         }
@@ -103,14 +102,13 @@ class QuestionnaireController extends Controller
     public function update(Request $request, $id)
     {
         {
-            // get the user
+            // get the questionnaire which was selected
             $questionnaire = Questionnaire::where('questionnaire_id',$id)->first();
         
-            // if user does not exist return to list
+            // if questionnaire selected does not exist return to list
             if(!$questionnaire)
             {
                 return redirect('/questionnaire');
-                // you could add on here the flash messaging of article does not exist.
             }
             return view('/questionnaire/edit')->with('questionnaire', $questionnaire);
         }

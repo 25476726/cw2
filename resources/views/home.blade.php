@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!--this page isn't used, the welcome blade is the home page-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>127.0.0.1</title>
-    <link rel="stylesheet" href="/css/foundation.css" />
+    <link rel="stylesheet" href="/css/foundation.css" /><!--applies foundation styles throughout the site-->
 </head>
 <body>
     <h1>there is no place like 127.0.0.1</h1>
@@ -19,7 +19,7 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
         <nav>
-            <button class="buttonactive"><a href="http://127.0.0.1:8000/">Home</a></button>
+            <button class="buttonactive"><a href="http://127.0.0.1:8000/">Home</a></button><!--nav bar-->
             <button><a href="http://127.0.0.1:8000/questionnaire">Questionnaires</a></button>
             <button><a href="http://127.0.0.1:8000/question">Questions</a></button>
             <button><a href="http://127.0.0.1:8000/option">Options</a></button>

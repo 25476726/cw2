@@ -7,9 +7,9 @@
  </head>
  <body>
 
-    <nav>
+    <nav> <!--nav bar at top of page-->
             <button><a href="http://127.0.0.1:8000/">Home</a></button>
-            <button class="buttonactive"><a href="http://127.0.0.1:8000/questionnaire">Questionnaires</a></button>
+            <button class="buttonactive"><a href="http://127.0.0.1:8000/questionnaire">Questionnaires</a></button> <!--this class has the green background colour to indicate active button-->
             <button><a href="http://127.0.0.1:8000/question">Questions</a></button>
             <button><a href="http://127.0.0.1:8000/option">Options</a></button>
             <button><a href="http://127.0.0.1:8000/users">Users</a></button>
@@ -20,7 +20,7 @@
  <section>
      @if (isset ($questionnaires))
 
-         <table>
+         <table> <!--Table of all questionnaires and their details and options-->
              <tr>
                  <th>Questionnaire ID</th>
                  <th>Questionnaire Name</th>
@@ -38,12 +38,12 @@
                  </tr>
              @endforeach
          </table>
-     @else
+     @else <!--displays this message if no questionnaires are present in the database-->
          <p>no questionnaires</p>
      @endif
  </section>
 
- {{ Form::open(array('action' => 'QuestionnaireController@create', 'method' => 'get')) }}
+ {{ Form::open(array('action' => 'QuestionnaireController@create', 'method' => 'get')) }} <!--Button at bottom of page to create a new questionnaire, links to create page-->
     <div class="row large-12 columns">
         {!! Form::submit('Create a new Questionnaire', ['class' => 'button']) !!}
     </div>

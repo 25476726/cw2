@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Questionnaire site home </title> <!--This is the only page that does not have the foundation styles-->
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,13 +81,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Survey Site
+                    Survey Site <!--title-->
                 </div>
                 <div>
-                    Welcome to my belter survey site
-                    Ensure host address is 127.0.0.1/8000 otherwise the links will not work
+                    Welcome to my survey site
+                    Ensure host address is 127.0.0.1/8000 otherwise the links will not work <!--tells user that they need to be on port 8000 for the links to work-->
                 </div>
-                <div class="links">
+                <div class="links"> <!--base laravel nav bar-->
                     <a href="http://127.0.0.1:8000/users">Users</a>
                     <a href="http://127.0.0.1:8000/questionnaire">Questionnaires</a>
                     <a href="http://127.0.0.1:8000/question">Questions</a>

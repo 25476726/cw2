@@ -9,13 +9,13 @@
 <header>
     <nav>
             <button><a href="http://127.0.0.1:8000/">Home</a></button>
-            <button><a href="http://127.0.0.1:8000/questionnaire">Back to all Questionnaires</a></button>
+            <button><a href="http://127.0.0.1:8000/questionnaire">Back to all Questionnaires</a></button> <!--smaller nav bar at top only containing options for home, and back to questionnaires page-->
     </nav>
 </header>
 <h1>Edit Questionnaire {{ $questionnaire->questionnaire_id }}</h1>
 
 
-        <!-- form goes here -->
+        <!-- edit questionnaire form goes here -->
 {!! Form::model($questionnaire, ['action' => 'QuestionnaireController@update', 'method' => 'PATCH', 'url' => '/questionnaire/' , $questionnaire->questionnaire_id]) !!}
 
 <div>

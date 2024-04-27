@@ -9,17 +9,14 @@
 <header>
     <nav>
             <button><a href="http://127.0.0.1:8000/">Home</a></button>
-            <button><a href="http://127.0.0.1:8000/questionnaire">Back to all Questionnaires</a></button>
+            <button><a href="http://127.0.0.1:8000/questionnaire">Back to all Questionnaires</a></button> <!--smaller nav bar at top only containing options for home, and back to questionnaires page-->
     </nav>
 </header>
 <h1>Create a new Questionnaire</h1>
 
-{!! Form::open(array('action' => 'QuestionnaireController@store', 'id' => 'createquestionnaire')) !!}
+{!! Form::open(array('action' => 'QuestionnaireController@store', 'id' => 'createquestionnaire')) !!} <!--calls question controller store method-->
         {{ csrf_field() }}
-<!--     <div class="row large-12 columns">
-    {!! Form::label('questionnaire_id', 'ID:') !!}
-    {!! Form::text('questionnaire_id', null, ['class' => 'large-8 columns']) !!}
-    </div> -->
+
     <div class="row large-12 columns">
         {!! Form::label('questionnaire_name', 'Questionnaire Name:') !!}
         {!! Form::text('questionnaire_name', null, ['class' => 'large-8 columns']) !!}
