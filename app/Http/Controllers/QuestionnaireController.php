@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Questionnaire; /* Makes the Questionnaire, Question, and Option models available to the contorller. */
 use App\Question;
 use App\Option;
-use App\Category;
+use App\Category; //not used
 
 class QuestionnaireController extends Controller
 {
@@ -31,7 +31,7 @@ class QuestionnaireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() //returns create page
     {
 
         return view('/questionnaire/create');
@@ -43,12 +43,12 @@ class QuestionnaireController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) 
     {
         $questionnaire = Questionnaire::create($request->all());
         $questionnaire->questionnaires()->attach($request->input('questionnaire'));
 
-        return redirect('/questionnaire');
+        return redirect('/questionnaire'); //this method is called on the questionnaire/create page to add the data into the database. then redirects back to questionnaire index page.
     }
 
     /**
@@ -75,7 +75,7 @@ class QuestionnaireController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response 
      */
     public function edit($id)
     {

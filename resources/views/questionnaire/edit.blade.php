@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Questionnaire {{ $questionnaire->questionnaire_id }}</title>
-    <link rel="stylesheet" href="/css/foundation.css" />
+    <link rel="stylesheet" href="/css/foundation.css" /><!--applies foundation styles throughout the site-->
 </head>
 <body>
 <header>
@@ -34,10 +34,10 @@
 </div>
 
 <div>
-{!! Form::submit('Update Questionnaire', ['class' => 'button']) !!}
+{!! Form::submit('Update Questionnaire', ['class' => 'button']) !!}<!-- button class adds the foundation button styles -->
 </div>
 
 
-{!! Form::close() !!}
+{!! Form::close() !!} <!-- closes edit questionnaire form -->
 </body>
 </html>

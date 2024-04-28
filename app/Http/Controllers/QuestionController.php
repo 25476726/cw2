@@ -46,7 +46,7 @@ class QuestionController extends Controller
         $question = Question::create($request->all());
         $question->questions()->attach($request->input('question'));
 
-        return redirect('/question');
+        return redirect('/question');//this method is called on the question/create page to add the data into the database. redirects back to question index page.
     }
 
     /**

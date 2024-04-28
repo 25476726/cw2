@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Questionnaire</title>
-    <link rel="stylesheet" href="/css/foundation.css" />
+    <link rel="stylesheet" href="/css/foundation.css" /><!--applies foundation styles throughout the site-->
 </head>
 <body>
 <header>
@@ -33,9 +33,9 @@
     </div>
 
     <div class="row large-4 columns">
-        {!! Form::submit('Create Questionnaire', ['class' => 'button']) !!}
+        {!! Form::submit('Create Questionnaire', ['class' => 'button']) !!}<!-- button class adds the foundation button styles -->
     </div>
-{!! Form::close() !!}
+{!! Form::close() !!}<!-- closes create questionnaire form -->
 
 </body>
 </html>

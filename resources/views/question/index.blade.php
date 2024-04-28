@@ -45,7 +45,7 @@
      @endif
  </section>
 
- {{ Form::open(array('action' => 'QuestionController@create', 'method' => 'get')) }}
+ {{ Form::open(array('action' => 'QuestionController@create', 'method' => 'get')) }}<!-- calls question controller create method which redirects to /create -->
     <div class="row large-12 columns">
         {!! Form::submit('Create a new Question', ['class' => 'button']) !!}
     </div>

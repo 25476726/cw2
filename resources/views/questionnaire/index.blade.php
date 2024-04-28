@@ -3,7 +3,7 @@
  <head>
      <meta charset="UTF-8">
      <title>All Questionnaires</title>
-     <link rel="stylesheet" href="/css/foundation.css" />
+     <link rel="stylesheet" href="/css/foundation.css" /><!--applies foundation styles throughout the site-->
  </head>
  <body>
 
@@ -43,7 +43,7 @@
      @endif
  </section>
 
- {{ Form::open(array('action' => 'QuestionnaireController@create', 'method' => 'get')) }} <!--Button at bottom of page to create a new questionnaire, links to create page-->
+ {{ Form::open(array('action' => 'QuestionnaireController@create', 'method' => 'get')) }} <!--Button at bottom of page to create a new questionnaire, links to create page by calling create method-->
     <div class="row large-12 columns">
         {!! Form::submit('Create a new Questionnaire', ['class' => 'button']) !!}
     </div>

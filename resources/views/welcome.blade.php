@@ -85,17 +85,14 @@
                 </div>
                 <div>
                     Welcome to my survey site
-                    Ensure host address is 127.0.0.1/8000 otherwise the links will not work <!--tells user that they need to be on port 8000 for the links to work-->
+                    Ensure host address is 127.0.0.1/8000 otherwise the links will not work. Alternatively, simply add the bracketed string to the end of the url <!--tells user that they need to be on port 8000 for the links to work, alternatively the links can be manually entered-->
                 </div>
                 <div class="links"> <!--base laravel nav bar-->
-                    <a href="http://127.0.0.1:8000/users">Users</a>
-                    <a href="http://127.0.0.1:8000/questionnaire">Questionnaires</a>
-                    <a href="http://127.0.0.1:8000/question">Questions</a>
-                    <a href="http://127.0.0.1:8000/option">Options</a>
-                    <a href="http://127.0.0.1:8000/admin/create">testquest</a>
-                    <a href="http://127.0.0.1:8000/questionnaire/show">examplequest</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="http://127.0.0.1:8000/users">Users (/users)</a> 
+                    <a href="http://127.0.0.1:8000/questionnaire">Questionnaires (/questionnaire)</a>
+                    <a href="http://127.0.0.1:8000/question">Questions (/question)</a>
+                    <a href="http://127.0.0.1:8000/option">Options (/option)</a>
+                    <!-- <a href="http://127.0.0.1:8000/admin/create">Example Questionnaire</a> example questionnaire i made, not used in site.-->
                 </div>
             </div>
         </div>

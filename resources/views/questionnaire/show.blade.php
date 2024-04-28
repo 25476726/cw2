@@ -3,7 +3,7 @@
  <head>
      <meta charset="UTF-8">
      <title>Questionnaire</title>
-     <link rel="stylesheet" href="/css/foundation.css" />
+     <link rel="stylesheet" href="/css/foundation.css" /><!--applies foundation styles throughout the site-->
  </head>
  <body>
     <header>
@@ -45,7 +45,7 @@
 <section>
  {{ Form::open() }} <!--submit button at bottom of page-->
     <div class="row large-12 columns">
-        {!! Form::submit('Submit', ['class' => 'button']) !!}
+        {!! Form::submit('Submit', ['class' => 'button']) !!}<!-- button class adds the foundation button styles -->
     </div>
 {{ Form::close() }}
 </section>
