@@ -92,7 +92,7 @@
                     <a href="http://127.0.0.1:8000/questionnaire">Questionnaires (/questionnaire)</a>
                     <a href="http://127.0.0.1:8000/question">Questions (/question)</a>
                     <a href="http://127.0.0.1:8000/option">Options (/option)</a>
-                    <!-- <a href="http://127.0.0.1:8000/admin/create">Example Questionnaire</a> example questionnaire i made, not used in site.-->
+                    <a href="http://127.0.0.1:8000/admin/create">Example Questionnaire (/admin/create)</a>
                 </div>
             </div>
         </div>
